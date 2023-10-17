@@ -3,7 +3,7 @@ import streamlit as st
 import folium
 import google.auth
 import pandas as pd
-from streamlit_folium import folium_static
+#from streamlit_folium import folium_static
 
 
  
@@ -97,7 +97,8 @@ def generar_mapa(user_id):
         if row['name'] in nombres:
             folium.Marker([row['latitude'], row['longitude']]).add_to(mapa)
     return mapa
- #PRUEBA  
+
+#PRUEBA  
  # Obtener el código HTML del mapa de Folium
   #  folium_map_html = mapa._repr_html_()
     
@@ -119,7 +120,11 @@ def main():
         st.write('Recomendaciones:')
         st.write(recomendaciones)
         mapa = generar_mapa(user_id)
-        folium_static(mapa)
+       # folium_static(mapa)
+        folium_map_html = mapa._repr_html_()
+
+# Mostrar el mapa en Streamlit como HTML
+        st.write(folium_map_html, unsafe_allow_html=True)
 
 #PRUEBA
    # if st.button('Obtener Recomendaciones'):
