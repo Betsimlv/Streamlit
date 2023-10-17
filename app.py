@@ -122,7 +122,7 @@ def main():
         st.write(recomendaciones)
         mapa = generar_mapa(user_id)
        # folium_static(mapa)
-        mapa.zoom_start = 12
+        mapa.zoom_start = 100
 
      # Guardar el mapa de Folium como un archivo HTML temporal
         tmpfile = "temp_map.html"
