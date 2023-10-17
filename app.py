@@ -85,7 +85,7 @@ def obtener_informacion(user_id):
 #Funcion para mostrar un mapa de los lugares recomendados
 def generar_mapa(user_id):
     user_id = int(user_id)
-    mapa = folium.Map(zoom_start=120)
+    mapa = folium.Map()
     nombres = []
     df_usuario = df[df['user_id'] == user_id]
     recomendaciones = df_usuario['recomendaciones'].iloc[0]
@@ -97,6 +97,8 @@ def generar_mapa(user_id):
     for index, row in df.iterrows():
         if row['name'] in nombres:
             folium.Marker([row['latitude'], row['longitude']]).add_to(mapa)
+         #PRUEBA
+    mapa.fit_bounds([[row['latitude'], row['longitude']] for index, row in df.iterrows() if row['name'] in nombres])
     return mapa
 
 #PRUEBA  
