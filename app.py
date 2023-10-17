@@ -8,7 +8,7 @@ from io import BytesIO
  
 #Extraer los datos de google cloud
 
-credenciales = google.auth.default("prueba-394815-58996e44be1c.json")
+credenciales = google.auth.default()
 ruta = "gs://archivo_ml/data_sistema_final.parquet"
 df = pd.read_parquet(ruta)
 #df = pd.read_parquet("data_sistema_final.parquet")
