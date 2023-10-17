@@ -124,7 +124,7 @@ def main():
        # folium_static(mapa)
 # Convertir el mapa de Folium en una imagen
         tmpfile = BytesIO()
-        mAPA.save(tmpfile, format='png')
+        mapa.save(tmpfile, format='png')
         tmpfile.seek(0)
 
 # Mostrar la imagen en Streamlit
