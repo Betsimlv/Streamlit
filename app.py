@@ -1,9 +1,10 @@
 #importar librerias
 import streamlit as st
+import folium
 import google.auth
 import pandas as pd
 from streamlit_folium import folium_static
-import folium
+
 
  
 #Extraer los datos de google cloud
