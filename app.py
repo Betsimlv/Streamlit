@@ -2,7 +2,7 @@
 import streamlit as st
 import google.auth
 import pandas as pd
-from streamlit_folium import folium_static
+from streamlit-folium import folium_static
 import folium
 
  
