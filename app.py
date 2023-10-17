@@ -122,16 +122,31 @@ def main():
         st.write(recomendaciones)
         mapa = generar_mapa(user_id)
        # folium_static(mapa)
+
+
+     # Guardar el mapa de Folium como un archivo HTML temporal
+        tmpfile = "temp_map.html"
+        mapa.save(tmpfile)
+
+# Mostrar el mapa en Streamlit utilizando el componente HTML
+        with open(tmpfile, "r") as f:
+            folium_html = f.read()
+        st.components.v1.html(folium_html, width=700, height=500)
+
+# Eliminar el archivo HTML temporal
+        os.remove(tmpfile)
+
+#PRUEBA
 # Convertir el mapa de Folium en una imagen
-        tmpfile = BytesIO()
-        mapa.save(tmpfile, format='png')
-        tmpfile.seek(0)
+      #  tmpfile = BytesIO()
+       # mapa.save(tmpfile, format='png')
+        #tmpfile.seek(0)
 
 # Mostrar la imagen en Streamlit
-        st.image(tmpfile, width=700)
+      #  st.image(tmpfile, width=700)
 
 # Cerrar el archivo temporal
-        tmpfile.close()
+       # tmpfile.close()
 
 
 
