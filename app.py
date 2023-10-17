@@ -8,10 +8,10 @@ import folium
  
 #Extraer los datos de google cloud
 
-credenciales = google.auth.default()
-ruta = "gs://archivo_ml/data_sistema_final.parquet"
-df = pd.read_parquet(ruta)
-
+#credenciales = google.auth.default()
+#ruta = "gs://archivo_ml/data_sistema_final.parquet"
+#df = pd.read_parquet(ruta)
+df = pd.read_csv("data_sistema_final.parquet")
 
 #Encabezado
 st.markdown('<h1 style="color: #20639B;text-align: center;">ANALYTICAL INSIGHTS CO.</h1>', unsafe_allow_html=True)
