@@ -95,8 +95,12 @@ def generar_mapa(user_id):
     for index, row in df.iterrows():
         if row['name'] in nombres:
             folium.Marker([row['latitude'], row['longitude']]).add_to(mapa)
-    return mapa
-
+    #return mapa
+ #PRUEBA  
+ # Obtener el código HTML del mapa de Folium
+    folium_map_html = mapa._repr_html_()
+    
+    return folium_map_html
 
 
 
@@ -109,13 +113,23 @@ def main():
     user_id = st.text_input('Ingresa el ID del Usuario. Ejemplo: 1')
 
     
-    if st.button('Obtener Recomendaciones'):
-        recomendaciones = obtener_recomendaciones(user_id)
-        st.write('Recomendaciones:')
-        st.write(recomendaciones)
-        mapa = generar_mapa(user_id)
-        folium_static(mapa)
-        
+ #   if st.button('Obtener Recomendaciones'):
+  #      recomendaciones = obtener_recomendaciones(user_id)
+   #     st.write('Recomendaciones:')
+    #    st.write(recomendaciones)
+     #   mapa = generar_mapa(user_id)
+      #  folium_static(mapa)
+
+#PRUEBA
+if st.button('Obtener Recomendaciones'):
+    user_id = obtener_user_id()  # Lógica para obtener el ID del usuario
+    recomendaciones = obtener_recomendaciones(user_id)
+    st.write('Recomendaciones:')
+    st.write(recomendaciones)
+    generar_mapa(user_id)
+
+
+ 
     if st.button('Obtener informacion'):
         informacion = obtener_informacion(user_id)
         st.write('Recomendaciones:')
