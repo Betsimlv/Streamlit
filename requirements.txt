@@ -3,4 +3,5 @@ numpy==1.26.0
 google-auth==2.3.3
 streamlit>=1.13.0
 folium>=0.13
+streamlit-folium==0.14.0
 
