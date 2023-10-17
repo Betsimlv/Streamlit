@@ -121,12 +121,12 @@ def main():
       #  folium_static(mapa)
 
 #PRUEBA
-if st.button('Obtener Recomendaciones'):
-  #  user_id = obtener_user_id()  # Lógica para obtener el ID del usuario
-    recomendaciones = obtener_recomendaciones(user_id)
-    st.write('Recomendaciones:')
-    st.write(recomendaciones)
-    generar_mapa(user_id)
+    if st.button('Obtener Recomendaciones'):
+      #  user_id = obtener_user_id()  # Lógica para obtener el ID del usuario
+        recomendaciones = obtener_recomendaciones(user_id)
+        st.write('Recomendaciones:')
+        st.write(recomendaciones)
+        generar_mapa(user_id)
 
 
  
