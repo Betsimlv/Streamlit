@@ -121,10 +121,27 @@ def main():
         st.write(recomendaciones)
         mapa = generar_mapa(user_id)
        # folium_static(mapa)
-        folium_map_html = mapa._repr_html_()
+# Convertir el mapa de Folium en una imagen
+        tmpfile = BytesIO()
+        mAPA.save(tmpfile, format='png')
+        tmpfile.seek(0)
+
+# Mostrar la imagen en Streamlit
+        st.image(tmpfile, width=700)
+
+# Cerrar el archivo temporal
+        tmpfile.close()
+
+
+
+
+
+ 
+     #PRUEBA
+        #folium_map_html = mapa._repr_html_()
 
 # Mostrar el mapa en Streamlit como HTML
-        st.write(folium_map_html, unsafe_allow_html=True)
+      #  st.write(folium_map_html, unsafe_allow_html=True)
 
 #PRUEBA
    # if st.button('Obtener Recomendaciones'):
