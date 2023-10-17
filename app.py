@@ -4,7 +4,6 @@ import folium
 import google.auth
 import pandas as pd
 from io import BytesIO
-#from streamlit_folium import folium_static
 
 
  
@@ -97,16 +96,9 @@ def generar_mapa(user_id):
     for index, row in df.iterrows():
         if row['name'] in nombres:
             folium.Marker([row['latitude'], row['longitude']]).add_to(mapa)
-         #PRUEBA
+         #Colocar zoom predeterminado
     mapa.fit_bounds([[row['latitude'], row['longitude']] for index, row in df.iterrows() if row['name'] in nombres])
     return mapa
-
-#PRUEBA  
- # Obtener el código HTML del mapa de Folium
-  #  folium_map_html = mapa._repr_html_()
-    
-   # return folium_map_html
-
 
 
 # Aplicación de Streamlit
@@ -133,41 +125,6 @@ def main():
         with open(tmpfile, "r") as f:
             folium_html = f.read()
         st.components.v1.html(folium_html, width=700, height=500)
-
-# Eliminar el archivo HTML temporal
-     #   os.remove(tmpfile)
-
-#PRUEBA
-# Convertir el mapa de Folium en una imagen
-      #  tmpfile = BytesIO()
-       # mapa.save(tmpfile, format='png')
-        #tmpfile.seek(0)
-
-# Mostrar la imagen en Streamlit
-      #  st.image(tmpfile, width=700)
-
-# Cerrar el archivo temporal
-       # tmpfile.close()
-
-
-
-
-
- 
-     #PRUEBA
-        #folium_map_html = mapa._repr_html_()
-
-# Mostrar el mapa en Streamlit como HTML
-      #  st.write(folium_map_html, unsafe_allow_html=True)
-
-#PRUEBA
-   # if st.button('Obtener Recomendaciones'):
-      #  user_id = obtener_user_id()  # Lógica para obtener el ID del usuario
-    #    recomendaciones = obtener_recomendaciones(user_id)
-     #   st.write('Recomendaciones:')
-      #  st.write(recomendaciones)
-       # generar_mapa(user_id)
-
 
  
     if st.button('Obtener informacion'):
