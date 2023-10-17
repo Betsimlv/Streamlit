@@ -134,7 +134,7 @@ def main():
         st.components.v1.html(folium_html, width=700, height=500)
 
 # Eliminar el archivo HTML temporal
-        os.remove(tmpfile)
+     #   os.remove(tmpfile)
 
 #PRUEBA
 # Convertir el mapa de Folium en una imagen
