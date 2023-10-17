@@ -114,7 +114,7 @@ def main():
         st.write('Recomendaciones:')
         st.write(recomendaciones)
         mapa = generar_mapa(user_id)
-        folium_static(mapa)
+        folium(mapa)
         
     if st.button('Obtener informacion'):
         informacion = obtener_informacion(user_id)
